@@ -2,7 +2,7 @@
 # Dapp Starter Kit
 
 ## Recommendations
-It is recommended that Windows users first [install Windows Subsystem for Linux - WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10). The recommended Linux distribution to use is Ubuntu 20.04.
+It is recommended that Windows users first [install Windows Subsystem for Linux - WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10). The recommended Linux distribution to use is Ubuntu 20.04.  Learn more about WSL and the benefits it provides via [this short interactive course](https://docs.microsoft.com/en-us/learn/modules/get-started-with-windows-subsystem-for-linux/)
 
 If you do not already have a preferred text editor that you use for programming, it is recommended that you [install Visual Studio Code](https://code.visualstudio.com/download).  
 
