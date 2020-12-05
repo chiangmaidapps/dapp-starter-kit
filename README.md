@@ -37,3 +37,4 @@ Documentation:
 * [Ethers Docs](https://docs.ethers.io/v5/)
 * [The Graph Docs](https://thegraph.com/docs/introduction)
 * [Vue Docs](https://vuejs.org/v2/guide/)
+* [Buefy Docs](https://buefy.org/documentation)
