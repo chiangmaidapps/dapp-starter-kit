@@ -6,7 +6,6 @@ Make sure you have installed all of the following prerequisites on your developm
 
 ## Project setup
 ```
-yarn global add @vue/cli
 yarn install
 ```
 
