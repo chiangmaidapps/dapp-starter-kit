@@ -2,8 +2,12 @@
 # Dapp Starter Kit
 
 ## Recommendations
+
+### WSL for Windows Users
 It is recommended that Windows users first [install Windows Subsystem for Linux - WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10). The recommended Linux distribution to use is Ubuntu 20.04.  Learn more about WSL and the benefits it provides via [this short interactive course](https://docs.microsoft.com/en-us/learn/modules/get-started-with-windows-subsystem-for-linux/)
 
+
+### Visual Studio Code
 If you do not already have a preferred text editor that you use for programming, it is recommended that you [install Visual Studio Code](https://code.visualstudio.com/download).  
 
 In addition, you may find the following VS Code plugins useful:
@@ -11,6 +15,9 @@ In addition, you may find the following VS Code plugins useful:
 * [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
 * [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 * [Apollo GraphQL](https://marketplace.visualstudio.com/items?itemName=apollographql.vscode-apollo&ssr=false#overview)
+
+### Github
+If you do not already have a GitHub account, it is recommended that you [create one](https://github.com/join) and [add an SSH key to your account](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
 ## Prerequisites
 Make sure you have installed all of the following prerequisites on your development machine:
