@@ -16,7 +16,7 @@ In addition, you may find the following VS Code plugins useful:
 * [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 * [Apollo GraphQL](https://marketplace.visualstudio.com/items?itemName=apollographql.vscode-apollo&ssr=false#overview)
 
-### Github
+### GitHub
 If you do not already have a GitHub account, it is recommended that you [create one](https://github.com/join) and [add an SSH key to your account](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
 ## Prerequisites
