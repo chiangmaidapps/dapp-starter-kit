@@ -31,6 +31,12 @@ Make sure you have installed all of the following prerequisites on your developm
 * Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager. If you encounter any problems, you can also use this [GitHub Gist](https://gist.github.com/isaacs/579814) to install Node.js.
 * Yarn - [Download & Install Yarn](https://classic.yarnpkg.com/en/docs/install#mac-stable)
 
+## Project setup
+In a terminal window - navigate to this directory and type:
+```
+yarn install
+```
+
 ## Learn More
 Documentation:
 * [Solidity Docs](https://docs.soliditylang.org/en/v0.7.4/)
