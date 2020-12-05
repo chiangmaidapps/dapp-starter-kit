@@ -32,7 +32,8 @@ Make sure you have installed all of the following prerequisites on your developm
 * Yarn - [Download & Install Yarn](https://classic.yarnpkg.com/en/docs/install#mac-stable)
 
 ## Learn More
-[Solidity Docs](https://docs.soliditylang.org/en/v0.7.4/)
-[Ethers Docs](https://docs.ethers.io/v5/)
-[The Graph Docs](https://thegraph.com/docs/introduction)
-[Vue Docs](https://vuejs.org/v2/guide/)
+Documentation:
+* [Solidity Docs](https://docs.soliditylang.org/en/v0.7.4/)
+* [Ethers Docs](https://docs.ethers.io/v5/)
+* [The Graph Docs](https://thegraph.com/docs/introduction)
+* [Vue Docs](https://vuejs.org/v2/guide/)
