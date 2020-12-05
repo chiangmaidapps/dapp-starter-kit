@@ -4,7 +4,6 @@ require("hardhat-deploy");
 require("hardhat-deploy-ethers");
 require('hardhat-abi-exporter');
 require('hardhat-log-remover');
-require("@tenderly/hardhat-tenderly");
 require("hardhat-gas-reporter");
 
 const INFURA_KEY = process.env.INFURA_KEY
