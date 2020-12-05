@@ -1,5 +1,16 @@
 
-## Dapp Starter Kit
+# Dapp Starter Kit
+
+## Recommendations
+It is recommended that Windows users first [install Windows Subsystem for Linux - WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10). The recommended Linux distribution to use is Ubuntu 20.04.  Learn more about WSL and the benefits it provides via [this short interactive course](https://docs.microsoft.com/en-us/learn/modules/get-started-with-windows-subsystem-for-linux/)
+
+If you do not already have a preferred text editor that you use for programming, it is recommended that you [install Visual Studio Code](https://code.visualstudio.com/download).  
+
+In addition, you may find the following VS Code plugins useful:
+* [solidity](https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity)
+* [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
+* [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
+* [Apollo GraphQL](https://marketplace.visualstudio.com/items?itemName=apollographql.vscode-apollo&ssr=false#overview)
 
 ## Prerequisites
 Make sure you have installed all of the following prerequisites on your development machine:
