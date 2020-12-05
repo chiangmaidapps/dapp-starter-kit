@@ -2,13 +2,12 @@
   "name": "dapp-starter-kit-subgraph",
   "version": "0.1.0",
   "scripts": {
-    "build-contract": "solc contracts/Gravity.sol --abi -o abis --overwrite && solc contracts/Gravity.sol --bin -o bin --overwrite",
-    "create": "graph create chiangmaidapps/dapp-starter-kit --node https://api.thegraph.com/deploy/",
-    "create-local": "graph create chiangmaidapps/dapp-starter-kit --node http://127.0.0.1:8020",
-    "codegen": "graph codegen",
-    "build": "graph build",
-    "deploy": "graph deploy chiangmaidapps/dapp-starter-kit --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
-    "deploy-local": "graph deploy chiangmaidapps/dapp-starter-kit --ipfs http://localhost:5001 --node http://127.0.0.1:8020"
+    "create": "npx graph create chiangmaidapps/dapp-starter-kit --node https://api.thegraph.com/deploy/",
+    "create-local": "npx graph create chiangmaidapps/dapp-starter-kit --node http://127.0.0.1:8020",
+    "codegen": "npx graph codegen",
+    "build": "npx graph build",
+    "deploy": "npx graph deploy chiangmaidapps/dapp-starter-kit --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "deploy-local": "npx graph deploy chiangmaidapps/dapp-starter-kit --ipfs http://localhost:5001 --node http://127.0.0.1:8020"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.18.0",
@@ -16,9 +15,6 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "babel-register": "^6.26.0",
-    "truffle": "^5.0.4",
-    "truffle-contract": "^4.0.5",
-    "truffle-hdwallet-provider": "^1.0.4"
+    "babel-register": "^6.26.0"
   }
 }
