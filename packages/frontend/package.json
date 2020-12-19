@@ -1,5 +1,5 @@
 {
-  "name": "dapp-starter-kit-frontend",
+  "name": "@dapp-starter-kit/frontend",
   "version": "0.1.0",
   "scripts": {
     "serve": "npx vue-cli-service serve",

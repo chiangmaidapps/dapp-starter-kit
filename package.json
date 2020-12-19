@@ -1,7 +1,10 @@
 {
-  "name": "dapp-starter-kit",
+  "name": "@dapp-starter-kit/monorepo",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "sync": "yarn workspace @dapp-starter-kit/smart-contracts sync"
+  },
   "workspaces": {
     "packages": [
       "packages/*"

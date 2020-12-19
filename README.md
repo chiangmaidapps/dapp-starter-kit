@@ -44,3 +44,7 @@ Documentation:
 * [The Graph Docs](https://thegraph.com/docs/introduction)
 * [Vue Docs](https://vuejs.org/v2/guide/)
 * [Buefy Docs](https://buefy.org/documentation)
+
+Resources:
+* [Solidity By Example](https://solidity-by-example.org/0.6/) - Basic smart contract best practices
+* [scaffold-eth](https://github.com/austintgriffith/scaffold-eth) - Starter kit based on React with a ton of resources
