@@ -1,8 +1,6 @@
 {
   "name": "@dapp-starter-kit/smart-contracts",
-  "version": "0.1.0",
-  "description": "A simple starter kit for creating decentralized applications",
-  "repository": "https://github.com/chiangmaidapp/dapp-starter-kit",
+  "version": "0.0.0",
   "author": "Chris Piatt (@chpiatt)",
   "license": "Unlicense",
   "scripts": {

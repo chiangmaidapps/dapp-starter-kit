@@ -1,6 +1,8 @@
 {
   "name": "@dapp-starter-kit/subgraph",
-  "version": "0.1.0",
+  "version": "0.0.0",
+  "author": "Chris Piatt (@chpiatt)",
+  "license": "Unlicense",
   "scripts": {
     "create": "npx graph create chiangmaidapps/dapp-starter-kit --node https://api.thegraph.com/deploy/",
     "create-local": "npx graph create chiangmaidapps/dapp-starter-kit --node http://127.0.0.1:8020",

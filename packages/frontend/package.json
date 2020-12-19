@@ -1,6 +1,8 @@
 {
   "name": "@dapp-starter-kit/frontend",
   "version": "0.1.0",
+  "author": "Chris Piatt (@chpiatt)",
+  "license": "Unlicense",
   "scripts": {
     "serve": "npx vue-cli-service serve",
     "build": "npx vue-cli-service build",

@@ -1,9 +1,19 @@
 {
   "name": "@dapp-starter-kit/monorepo",
   "version": "0.0.0",
+  "description": "A simple starter kit for creating decentralized applications",
+  "repository": "https://github.com/chiangmaidapp/dapp-starter-kit",
+  "author": "Chris Piatt (@chpiatt)",
+  "license": "Unlicense",
   "private": true,
   "scripts": {
-    "sync": "yarn workspace @dapp-starter-kit/smart-contracts sync"
+    "deploy:hardhat": "yarn workspace @dapp-starter-kit/smart-contracts deploy:hardhat",
+    "deploy:local": "yarn workspace @dapp-starter-kit/smart-contracts deploy:local",
+    "deploy:rinkeby": "yarn workspace @dapp-starter-kit/smart-contracts deploy:rinkeby",
+    "deploy:prod": "yarn workspace @dapp-starter-kit/smart-contracts deploy:prod",
+    "compile": "yarn workspace @dapp-starter-kit/smart-contracts compile",
+    "sync": "yarn compile && yarn workspace @dapp-starter-kit/smart-contracts sync",
+    "sync:current": "yarn workspace @dapp-starter-kit/smart-contracts sync"
   },
   "workspaces": {
     "packages": [

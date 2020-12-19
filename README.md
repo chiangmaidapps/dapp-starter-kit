@@ -32,7 +32,13 @@ Make sure you have installed all of the following prerequisites on your developm
 * Yarn - [Download & Install Yarn](https://classic.yarnpkg.com/en/docs/install#mac-stable)
 
 ## Project setup
-In a terminal window - navigate to this directory and type:
+In a terminal window type:
+```
+git clone git@github.com:chiangmaidapps/dapp-starter-kit.git my-new-dapp
+```
+```
+cd my-new-dapp
+```
 ```
 yarn install
 ```
