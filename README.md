@@ -22,6 +22,15 @@ If you do not already have a GitHub account, it is recommended that you [create 
 ### MetaMask
 [Install MetaMask](https://metamask.io/download.html) in your browser and create an Ethereum address.  It is recommended to create a new account exclusively for testing purposes that will never hold any mainnet balances.
 
+### Infura
+[Sign up for a free Infura account](https://infura.io/register) and create a new project to get an API key.
+
+### Etherscan
+[Register for a free Etherscan account](https://etherscan.io/register) and create a new API key.
+
+### CoinMarketCap
+[Sign up for a free Coinmarketcap account](https://accounts.coinmarketcap.com/signup) and generate an API key.
+
 ### Rinkeby ETH
 Use the [Rinkeby faucet](https://faucet.rinkeby.io/) to populate your testing address with Rinkeby ETH.
 
