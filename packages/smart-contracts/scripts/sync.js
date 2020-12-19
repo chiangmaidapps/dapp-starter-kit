@@ -46,11 +46,18 @@ function syncContract(network, chainId, contractName) {
 
     fs.writeFileSync(
       `${PUBLISH_DIR}/${contractName}.address.json`,
-      JSON.stringify(addressesJson)
+      JSON.stringify(addressesJson, null, 2)
     );
     fs.writeFileSync(
       `${PUBLISH_DIR}/${contractName}.json`,
-      JSON.stringify(contract)
+      JSON.stringify(contract, null, 2)
+    );
+
+    console.log(
+      "Syncing",
+      chalk.cyan(contractName),
+      "to",
+      chalk.yellow(GRAPH_DIR + "/abis")
     );
 
     const folderPath = graphConfigPath.replace("/config.json","")
@@ -66,8 +73,6 @@ function syncContract(network, chainId, contractName) {
       JSON.stringify(contract, null, 2)
     );
 
-
-
     return true;
   } catch (e) {
     console.log(e);
@@ -79,34 +84,27 @@ async function main() {
   if (!fs.existsSync(PUBLISH_DIR)) {
     fs.mkdirSync(PUBLISH_DIR);
   }
-  const finalContractList = [];
-  fs.readdirSync(DEPLOY_DIR).forEach((network) => {
-    let chainId = "4"
-    let contracts = []
-    fs.readdirSync(`${DEPLOY_DIR}/${network}`).forEach((file) => {
-      if(file == ".chainId") {
-        chainId = fs.readFileSync(`${DEPLOY_DIR}/${network}/${file}`)
-        console.log(chainId)
-      } else if (file != "solcInputs") {
-        contracts.push(file.replace(".json", ""))
+  
+  if (fs.existsSync(DEPLOY_DIR)) {
+    fs.readdirSync(DEPLOY_DIR).forEach((network) => {
+      let chainId = "4"
+      let contracts = []
+      fs.readdirSync(`${DEPLOY_DIR}/${network}`).forEach((file) => {
+        if(file == ".chainId") {
+          chainId = fs.readFileSync(`${DEPLOY_DIR}/${network}/${file}`)
+        } else if (file != "solcInputs") {
+          contracts.push(file.replace(".json", ""))
+        }
+      })
+      for (const contract of contracts) {
+        syncContract(network, chainId, contract)
       }
-    })
-    for (const contract of contracts) {
-      syncContract(network, chainId, contract)
-    }
-    // if (file.indexOf(".sol") >= 0) {
-    //   const contractName = file.replace(".sol", "");
-    //   // Add contract to list if publishing is successful
-    //   if (publishContract(contractName)) {
-    //     finalContractList.push(contractName);
-    //   }
-    // }
-  });
-  // fs.writeFileSync(
-  //   `${PUBLISH_DIR}/contracts.js`,
-  //   `module.exports = ${JSON.stringify(finalContractList)};`
-  // );
+    });
+  } else {
+    console.log("No deployments yet. Deploy contracts before running sync.")
+  }
 }
+
 main()
   .then(() => process.exit(0))
   .catch((error) => {

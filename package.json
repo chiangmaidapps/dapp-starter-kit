@@ -12,8 +12,7 @@
     "deploy:rinkeby": "yarn workspace @dapp-starter-kit/smart-contracts deploy:rinkeby",
     "deploy:prod": "yarn workspace @dapp-starter-kit/smart-contracts deploy:prod",
     "compile": "yarn workspace @dapp-starter-kit/smart-contracts compile",
-    "sync": "yarn compile && yarn workspace @dapp-starter-kit/smart-contracts sync",
-    "sync:current": "yarn workspace @dapp-starter-kit/smart-contracts sync"
+    "sync": "yarn workspace @dapp-starter-kit/smart-contracts sync"
   },
   "workspaces": {
     "packages": [
