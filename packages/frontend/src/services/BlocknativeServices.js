@@ -3,9 +3,7 @@ import Onboard from "bnc-onboard";
 
 import {
   SUPPORTED_CHAIN_ID,
-  RPC_URL,
   BLOCKNATIVE_DAPP_ID,
-  INFURA_KEY,
 } from "@/settings";
 
 export function initOnboard(subscriptions) {
@@ -17,9 +15,7 @@ export function initOnboard(subscriptions) {
     subscriptions,
     walletSelect: {
       wallets: [
-        {walletName: "metamask", preferred: true},
-        {walletName: "trust", rpcUrl: RPC_URL},
-        {walletName: "walletConnect", infuraKey: INFURA_KEY, preferred: true,},
+        {walletName: "metamask", preferred: true}
       ],
     },
     walletCheck: [

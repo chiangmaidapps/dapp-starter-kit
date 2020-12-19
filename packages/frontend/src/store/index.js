@@ -8,7 +8,7 @@ import {ethers} from 'ethers';
 import SimpleTokenABI from '../contracts/SimpleToken';
 import DeployedTokenAddresses from '../contracts/SimpleToken.address.json';
 
-import {initOnboard, initNotify} from '@/services/BlocknativeServices';
+import {initOnboard} from '@/services/BlocknativeServices';
 
 let provider;
 const onboard = initOnboard({
@@ -17,7 +17,7 @@ const onboard = initOnboard({
   },
 });
 
-const notify = initNotify();
+// const notify = initNotify();
 
 
 export default new Vuex.Store({
@@ -53,7 +53,7 @@ export default new Vuex.Store({
     async disconnect({commit}) {
       commit('setAccount', null);
     },
-    async setupContracts({commit, dispatch}) {
+    async setupContracts({commit}) {
       const signer = provider.getSigner();
       const chain = await provider.getNetwork();
 
