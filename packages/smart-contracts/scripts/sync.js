@@ -2,25 +2,24 @@ const fs = require("fs");
 const chalk = require("chalk");
 const bre = require("hardhat");
 
-const publishDir = "../frontend/src/contracts";
-const graphDir = "../subgraph"
+const DEPLOY_DIR = "./deployments"
+const PUBLISH_DIR = "../frontend/src/contracts"
+const GRAPH_DIR = "../subgraph"
 
-function publishContract(contractName) {
+function syncContract(network, chainId, contractName) {
   console.log(
-    "Publishing",
+    "Syncing",
     chalk.cyan(contractName),
     "to",
-    chalk.yellow(publishDir)
+    chalk.yellow(PUBLISH_DIR)
   );
   try {
-    let contract = fs
-      .readFileSync(`${bre.config.paths.artifacts}/contracts/${contractName}.sol/${contractName}.json`)
-      .toString();
-    const address = fs
-      .readFileSync(`${bre.config.paths.artifacts}/${contractName}.address`)
-      .toString();
-    contract = JSON.parse(contract);
-    let graphConfigPath = `${graphDir}/config/config.json`
+    let deployJson = JSON.parse(fs
+      .readFileSync(`${DEPLOY_DIR}/${network}/${contractName}.json`))
+    
+    const address = deployJson.address;
+    const contract = deployJson.abi;
+    let graphConfigPath = `${GRAPH_DIR}/config/config.json`
     let graphConfig
     try {
       if (fs.existsSync(graphConfigPath)) {
@@ -30,23 +29,28 @@ function publishContract(contractName) {
       } else {
         graphConfig = '{}'
       }
-      } catch (e) {
-        console.log(e)
-      }
+    } catch (e) {
+      console.log(e)
+    }
 
     graphConfig = JSON.parse(graphConfig)
     graphConfig[contractName + "Address"] = address
+    
+    let addressesJson = {}
+    if(fs.existsSync(`${PUBLISH_DIR}/${contractName}.address.json`)) {
+      let addressesFile = fs.readFileSync(`${PUBLISH_DIR}/${contractName}.address.json`)
+      addressesJson = JSON.parse(addressesFile)
+    }
+    
+    addressesJson[`${chainId}`] = address
+
     fs.writeFileSync(
-      `${publishDir}/${contractName}.address.js`,
-      `module.exports = "${address}";`
+      `${PUBLISH_DIR}/${contractName}.address.json`,
+      JSON.stringify(addressesJson)
     );
     fs.writeFileSync(
-      `${publishDir}/${contractName}.abi.js`,
-      `module.exports = ${JSON.stringify(contract.abi, null, 2)};`
-    );
-    fs.writeFileSync(
-      `${publishDir}/${contractName}.bytecode.js`,
-      `module.exports = "${contract.bytecode}";`
+      `${PUBLISH_DIR}/${contractName}.json`,
+      JSON.stringify(contract)
     );
 
     const folderPath = graphConfigPath.replace("/config.json","")
@@ -58,8 +62,8 @@ function publishContract(contractName) {
       JSON.stringify(graphConfig, null, 2)
     );
     fs.writeFileSync(
-      `${graphDir}/abis/${contractName}.json`,
-      JSON.stringify(contract.abi, null, 2)
+      `${GRAPH_DIR}/abis/${contractName}.json`,
+      JSON.stringify(contract, null, 2)
     );
 
 
@@ -72,23 +76,36 @@ function publishContract(contractName) {
 }
 
 async function main() {
-  if (!fs.existsSync(publishDir)) {
-    fs.mkdirSync(publishDir);
+  if (!fs.existsSync(PUBLISH_DIR)) {
+    fs.mkdirSync(PUBLISH_DIR);
   }
   const finalContractList = [];
-  fs.readdirSync(bre.config.paths.sources).forEach((file) => {
-    if (file.indexOf(".sol") >= 0) {
-      const contractName = file.replace(".sol", "");
-      // Add contract to list if publishing is successful
-      if (publishContract(contractName)) {
-        finalContractList.push(contractName);
+  fs.readdirSync(DEPLOY_DIR).forEach((network) => {
+    let chainId = "4"
+    let contracts = []
+    fs.readdirSync(`${DEPLOY_DIR}/${network}`).forEach((file) => {
+      if(file == ".chainId") {
+        chainId = fs.readFileSync(`${DEPLOY_DIR}/${network}/${file}`)
+        console.log(chainId)
+      } else if (file != "solcInputs") {
+        contracts.push(file.replace(".json", ""))
       }
+    })
+    for (const contract of contracts) {
+      syncContract(network, chainId, contract)
     }
+    // if (file.indexOf(".sol") >= 0) {
+    //   const contractName = file.replace(".sol", "");
+    //   // Add contract to list if publishing is successful
+    //   if (publishContract(contractName)) {
+    //     finalContractList.push(contractName);
+    //   }
+    // }
   });
-  fs.writeFileSync(
-    `${publishDir}/contracts.js`,
-    `module.exports = ${JSON.stringify(finalContractList)};`
-  );
+  // fs.writeFileSync(
+  //   `${PUBLISH_DIR}/contracts.js`,
+  //   `module.exports = ${JSON.stringify(finalContractList)};`
+  // );
 }
 main()
   .then(() => process.exit(0))
