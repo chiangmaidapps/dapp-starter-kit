@@ -4,7 +4,7 @@
             <div class="hero-body">
                 <div class="container has-text-centered mt-6">
                     <h1 class="title has-text-weight-bold is-size-1 mb-5">
-                        Hello welcome to Simple.
+                        Dapp Starter Kit
                     </h1>
                     <h2 class="subtitle mb-6 pt-5">
                         Connect your web3 wallet
