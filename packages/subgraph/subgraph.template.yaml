@@ -6,9 +6,9 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: SimpleToken
-    network: "rinkeby"
+    network: "{{network}}"
     source:
-      address: "0x826b046e54E006F1CD87e93384fC44496AB6A32F"
+      address: "{{SimpleTokenAddress}}"
       abi: SimpleToken
     mapping:
       kind: ethereum/events

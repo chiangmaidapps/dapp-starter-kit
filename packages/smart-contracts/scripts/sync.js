@@ -19,7 +19,7 @@ function syncContract(network, chainId, contractName) {
     
     const address = deployJson.address;
     const contract = deployJson.abi;
-    let graphConfigPath = `${GRAPH_DIR}/config/config.json`
+    let graphConfigPath = `${GRAPH_DIR}/config/${network}.json`
     let graphConfig
     try {
       if (fs.existsSync(graphConfigPath)) {
@@ -34,6 +34,7 @@ function syncContract(network, chainId, contractName) {
     }
 
     graphConfig = JSON.parse(graphConfig)
+    graphConfig["network"] = network
     graphConfig[contractName + "Address"] = address
     
     let addressesJson = {}
@@ -60,7 +61,7 @@ function syncContract(network, chainId, contractName) {
       chalk.yellow(GRAPH_DIR + "/abis")
     );
 
-    const folderPath = graphConfigPath.replace("/config.json","")
+    const folderPath = GRAPH_DIR + "/config"
     if (!fs.existsSync(folderPath)){
       fs.mkdirSync(folderPath);
     }

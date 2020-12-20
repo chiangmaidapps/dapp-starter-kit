@@ -4,16 +4,16 @@
   "author": "Chris Piatt (@chpiatt)",
   "license": "Unlicense",
   "scripts": {
-    "create": "npx graph create chiangmaidapps/dapp-starter-kit --node https://api.thegraph.com/deploy/",
-    "create-local": "npx graph create chiangmaidapps/dapp-starter-kit --node http://127.0.0.1:8020",
-    "codegen": "npx graph codegen",
-    "build": "npx graph build",
-    "deploy": "npx graph deploy chiangmaidapps/dapp-starter-kit --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
-    "deploy-local": "npx graph deploy chiangmaidapps/dapp-starter-kit --ipfs http://localhost:5001 --node http://127.0.0.1:8020"
+    "graph:create": "npx graph create $GRAPH_ORG/$SUBGRAPH_NAME --node $GRAPH_NODE --access-token $GRAPH_ACCESS_TOKEN",
+    "graph:codegen": "npx graph codegen",
+    "graph:build": "npx graph build",
+    "graph:prepare": "npx mustache ./config/$HARDHAT_NETWORK.json subgraph.template.yaml > subgraph.yaml",
+    "graph:deploy": "npx graph deploy $GRAPH_ORG/$SUBGRAPH_NAME --ipfs $IPFS_NODE --node $GRAPH_NODE --access-token $GRAPH_ACCESS_TOKEN"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.19.0",
-    "@graphprotocol/graph-ts": "^0.19.0"
+    "@graphprotocol/graph-ts": "^0.19.0",
+    "mustache": "^3.1.0"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",

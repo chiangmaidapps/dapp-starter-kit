@@ -6,7 +6,7 @@ Vue.use(Vuex);
 import {ethers} from 'ethers';
 
 import SimpleTokenABI from '../contracts/SimpleToken';
-import DeployedTokenAddresses from '../contracts/SimpleToken.address.json';
+import SimpleTokenAddresses from '../contracts/SimpleToken.address.json';
 
 import {initOnboard} from '@/services/BlocknativeServices';
 
@@ -57,7 +57,7 @@ export default new Vuex.Store({
       const signer = provider.getSigner();
       const chain = await provider.getNetwork();
 
-      const simpleTokenAddress = DeployedTokenAddresses[chain.chainId.toString()];
+      const simpleTokenAddress = SimpleTokenAddresses[chain.chainId.toString()];
       const simpleTokenContract = new ethers.Contract(
         simpleTokenAddress,
         SimpleTokenABI,

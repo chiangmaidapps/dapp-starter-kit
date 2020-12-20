@@ -17,7 +17,12 @@
     "test": "yarn workspace @dapp-starter-kit/smart-contracts test",
     "test:spec": "yarn workspace @dapp-starter-kit/smart-contracts test:spec",
     "serve": "yarn workspace @dapp-starter-kit/frontend serve",
-    "build": "yarn workspace @dapp-starter-kit/frontend build"
+    "build": "yarn workspace @dapp-starter-kit/frontend build",
+    "graph:create": "yarn workspace @dapp-starter-kit/subgraph graph:create",
+    "graph:codegen": "yarn workspace @dapp-starter-kit/subgraph graph:codegen",
+    "graph:build": "yarn workspace @dapp-starter-kit/subgraph graph:build",
+    "graph:prepare": "yarn workspace @dapp-starter-kit/subgraph graph:prepare",
+    "graph:deploy": "yarn workspace @dapp-starter-kit/subgraph graph:deploy"
   },
   "workspaces": {
     "packages": [
