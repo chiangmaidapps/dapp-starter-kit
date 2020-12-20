@@ -4,7 +4,7 @@
   "author": "Chris Piatt (@chpiatt)",
   "license": "Unlicense",
   "scripts": {
-    "hardhat": "npx hardhat node --no-deploy --show-accounts",
+    "chain": "npx hardhat node --no-deploy --show-accounts",
     "accounts": "npx hardhat accounts",
     "compile": "npx hardhat compile",
     "script": "sh -c 'npx ./scripts/${0}.js'",

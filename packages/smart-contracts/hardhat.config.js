@@ -6,7 +6,7 @@ require('hardhat-abi-exporter');
 require('hardhat-log-remover');
 require("hardhat-gas-reporter");
 
-const INFURA_KEY = process.env.INFURA_KEY
+const RPC_URL = process.env.RPC_URL || "http://localhost:8545"
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
 const DEPLOYER_ADDRESS = process.env.DEPLOYER_ADDRESS
 const DEPLOYER_PRIVATE_KEY = process.env.DEPLOYER_PRIVATE_KEY
@@ -22,7 +22,7 @@ let hardhatConfig = {
 
 // Local network config
 let localhostConfig = {
-  url: 'http://localhost:8545',
+  url: RPC_URL,
   live: false,
   saveDeployments: true,
   tags: ["local"]
@@ -30,7 +30,7 @@ let localhostConfig = {
 
 // Rinkeby testnet config
 let rinkebyConfig = {
-  url: "https://rinkeby.infura.io/v3/" + INFURA_KEY,
+  url: RPC_URL,
   chainId: 4,
   live: true,
   saveDeployments: true,
@@ -39,7 +39,7 @@ let rinkebyConfig = {
 
 // Mainnet config
 let mainnetConfig = {
-  url: "https://mainnet.infura.io/v3/" + INFURA_KEY,
+  url: RPC_URL,
   chainId: 1,
   live: true,
   saveDeployments: true,

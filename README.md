@@ -25,6 +25,9 @@ If you do not already have a GitHub account, it is recommended that you [create 
 ### Rinkeby ETH
 Use the [Rinkeby faucet](https://faucet.rinkeby.io/) to populate your testing address with Rinkeby ETH.
 
+### Vue Devtools Extension
+[Install the Vue Devtools extension](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) for helpful tools to aid in debugging your frontend code
+
 
 ## Sign up for Accounts
 * [Sign up for a free Infura account](https://infura.io/register) and create a new project to get an API key.

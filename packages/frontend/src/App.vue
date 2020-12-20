@@ -5,7 +5,7 @@
                 <div class="navbar-brand">
                     <div class="navbar-item">
                         <router-link :to="{name: 'Home'}">
-                          <img alt="Simple logo" src="./assets/logo.png">
+                          <img alt="Home" src="./assets/logo.png">
                         </router-link>
                     </div>
                 </div>
