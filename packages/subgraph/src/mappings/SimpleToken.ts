@@ -1,5 +1,5 @@
-import { Transfer } from '../generated/SimpleToken/SimpleToken'
-import { User } from '../generated/schema'
+import { Transfer } from '../../generated/SimpleToken/SimpleToken'
+import { User } from '../../generated/schema'
 
 // Handle token transfers
 export function handleTransfer(event: Transfer): void {
