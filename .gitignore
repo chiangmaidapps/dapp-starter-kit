@@ -8,6 +8,7 @@
 *deployments/localhost/
 *deployments/hardhat/
 *deployments/*/solcInputs/
+*subgraph.yaml
 *.pendingTransactions
 *tenderly.yaml
 .env*
