@@ -8,8 +8,9 @@ dataSources:
     name: SimpleToken
     network: "{{network}}"
     source:
-      address: "{{SimpleTokenAddress}}"
+      address: "{{SimpleToken.address}}"
       abi: SimpleToken
+      startBlock: {{SimpleToken.startBlock}}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4

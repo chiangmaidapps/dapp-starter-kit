@@ -102,6 +102,7 @@ export function createOrFetchToken(address: Address): Token {
   let token = Token.load(address.toHexString())
   if (token === null) {
     token = new Token(address.toHexString())
+    token.numTransfers = ZERO_BI()
     token.save()
   }
   return token as Token

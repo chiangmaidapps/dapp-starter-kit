@@ -8,21 +8,26 @@
   "private": true,
   "scripts": {
     "chain": "yarn workspace @dapp-starter-kit/smart-contracts chain",
-    "deploy:hardhat": "yarn workspace @dapp-starter-kit/smart-contracts deploy:hardhat",
-    "deploy:local": "yarn workspace @dapp-starter-kit/smart-contracts deploy:local",
-    "deploy:rinkeby": "yarn workspace @dapp-starter-kit/smart-contracts deploy:rinkeby",
-    "deploy:prod": "yarn workspace @dapp-starter-kit/smart-contracts deploy:prod",
     "compile": "yarn workspace @dapp-starter-kit/smart-contracts compile",
+    "deploy": "yarn workspace @dapp-starter-kit/smart-contracts deploy",
+    "deploy:reset": "yarn workspace @dapp-starter-kit/smart-contracts deploy:reset",
+    "deploy:tag": "yarn workspace @dapp-starter-kit/smart-contracts deploy:tag",
+    "deploy:tag:reset": "yarn workspace @dapp-starter-kit/smart-contracts deploy:tag:reset",
     "sync": "yarn workspace @dapp-starter-kit/smart-contracts sync",
     "test": "yarn workspace @dapp-starter-kit/smart-contracts test",
     "test:spec": "yarn workspace @dapp-starter-kit/smart-contracts test:spec",
+    "test:gas": "yarn workspace @dapp-starter-kit/smart-contracts test:gas",
+    "logs": "yarn workspace @dapp-starter-kit/smart-contracts logs",
+    "script": "yarn workspace @dapp-starter-kit/smart-contracts script",
+    "verify": "yarn workspace @dapp-starter-kit/smart-contracts verify",
     "serve": "yarn workspace @dapp-starter-kit/frontend serve",
     "build": "yarn workspace @dapp-starter-kit/frontend build",
     "graph:create": "yarn workspace @dapp-starter-kit/subgraph graph:create",
     "graph:codegen": "yarn workspace @dapp-starter-kit/subgraph graph:codegen",
     "graph:build": "yarn workspace @dapp-starter-kit/subgraph graph:build",
     "graph:prepare": "yarn workspace @dapp-starter-kit/subgraph graph:prepare",
-    "graph:deploy": "yarn workspace @dapp-starter-kit/subgraph graph:deploy"
+    "graph:deploy": "yarn workspace @dapp-starter-kit/subgraph graph:deploy",
+    "reset": "yarn deploy:reset && yarn sync && yarn graph:prepare && yarn graph:codegen && yarn graph:deploy"
   },
   "workspaces": {
     "packages": [

@@ -6,10 +6,11 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: SimpleToken
-    network: "localhost"
+    network: "rinkeby"
     source:
-      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+      address: "0xEe2Af31C36ac18069d0bD85317550B4731D5C941"
       abi: SimpleToken
+      startBlock: 7759622
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4

@@ -19,6 +19,7 @@ function syncContract(network, chainId, contractName) {
       .readFileSync(`${DEPLOY_DIR}/${network}/${contractName}.json`))
     
     const address = deployJson.address;
+    const startBlock = deployJson.receipt.blockNumber;
     const contract = deployJson.abi;
     let graphConfigPath = `${GRAPH_DIR}/config/${network}.json`
     let graphConfig
@@ -36,7 +37,10 @@ function syncContract(network, chainId, contractName) {
 
     graphConfig = JSON.parse(graphConfig)
     graphConfig["network"] = network
-    graphConfig[contractName + "Address"] = address
+    graphConfig[contractName] = {
+      "address": address,
+      "startBlock": startBlock
+    }
     
     let addressesJson = {}
     if(fs.existsSync(`${PUBLISH_DIR}/${contractName}.address.json`)) {

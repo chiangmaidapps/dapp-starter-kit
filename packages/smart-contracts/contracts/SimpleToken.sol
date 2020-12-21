@@ -43,6 +43,7 @@ contract SimpleToken {
       name = _name;
       symbol = _symbol;
       balances[msg.sender] = totalSupply;
+      emit Transfer(address(this), msg.sender, totalSupply);
     }
 
     /**
