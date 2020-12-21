@@ -4,7 +4,6 @@ import { createApolloClient, restartWebsockets } from 'vue-cli-plugin-apollo/gra
 
 import {
   GRAPHQL_HTTP,
-  GRAPHQL_WS,
   GRAPH_ORG,
   SUBGRAPH_NAME
 } from "../settings";
@@ -22,7 +21,7 @@ const defaultOptions = {
   httpEndpoint: GRAPHQL_HTTP + GRAPH_ORG + "/" + SUBGRAPH_NAME,
   // You can use `wss` for secure connection (recommended in production)
   // Use `null` to disable subscriptions
-  wsEndpoint: GRAPHQL_WS + GRAPH_ORG + "/" + SUBGRAPH_NAME,
+  wsEndpoint: null,
   // LocalStorage token
   tokenName: AUTH_TOKEN,
   // Enable Automatic Query persisting with Apollo Engine

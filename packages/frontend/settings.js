@@ -6,4 +6,3 @@ export const BLOCKNATIVE_DAPP_ID = process.env.VUE_APP_BLOCKNATIVE_DAPP_ID;
 export const SUBGRAPH_NAME = process.env.VUE_APP_SUBGRAPH_NAME;
 export const GRAPH_ORG = process.env.VUE_APP_GRAPH_ORG;
 export const GRAPHQL_HTTP = process.env.VUE_APP_GRAPHQL_HTTP;
-export const GRAPHQL_WS = process.env.VUE_APP_GRAPHQL_WS;
