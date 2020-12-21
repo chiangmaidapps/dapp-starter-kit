@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import UserBalance from '../views/UserBalance.vue';
+import Balances from '../views/Balances.vue';
 
 Vue.use(VueRouter);
 
@@ -13,8 +13,8 @@ const routes = [
     },
     {
         path: '/balances',
-        name: 'UserBalance',
-        component: UserBalance
+        name: 'Balances',
+        component: Balances
     }
 ];
 

@@ -6,7 +6,7 @@ import {
   GRAPHQL_HTTP,
   GRAPH_ORG,
   SUBGRAPH_NAME
-} from "../settings";
+} from "./settings";
 
 
 // Install the vue plugin

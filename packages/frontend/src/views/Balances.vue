@@ -12,7 +12,7 @@
           <div class="form">
             <label for="field-address" class="label">Address</label>
             <input
-              v-model="address"
+              v-model="addressInput"
               placeholder="Type an address to see their token balance"
               class="input"
               id="field-address"
@@ -32,7 +32,9 @@
               <div v-else-if="error" class="error apollo">An error occured</div>
 
               <!-- Result -->
-              <div v-else-if="data" class="result apollo">{{ data.tokenBalance }}</div>
+              <div v-else-if="data && data.user && data.user.tokenBalance" class="result apollo">
+                Balance: {{ data.user.tokenBalance }}
+              </div>
 
               <!-- No result -->
               <div v-else class="no-result apollo">No result :(</div>
@@ -45,21 +47,20 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex';
 export default {
   data () {
     return {
-      address: '',
+      addressInput: ''
     }
   },
-  apollo: {
-  },
+  apollo: {},
   components: {},
   computed: {
-    ...mapGetters(['account']),
+    address: function() {
+      return this.addressInput.toLowerCase().trim();
+    }
   },
-  methods: {
-  },
+  methods: {},
 }
 </script>
 

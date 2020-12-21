@@ -11,6 +11,9 @@
                 </div>
 
                 <div class="navbar-start">
+                  <b-navbar-item tag="router-link" :to="{ name: 'Balances' }" v-if="account">
+                    Balances
+                  </b-navbar-item>
                 </div>
 
                 <div class="navbar-end">
@@ -46,7 +49,7 @@
       },
     },
     mounted() {
-      if (this.$router.currentRoute.path === '/leaderboard') {
+      if (this.$router.currentRoute.path === '/balances') {
         this.$router.push({name: 'Home'});
       }
     },

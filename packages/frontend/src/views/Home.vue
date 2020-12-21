@@ -32,12 +32,12 @@
     methods: {
       connect() {
         if (this.account) {
-          this.$router.push({name: 'UserBalance'});
+          this.$router.push({name: 'Balances'});
           return;
         }
         this.$store.dispatch("bootstrap", {
           onSuccessCallback: () => {
-            this.$router.push({name: 'UserBalance'});
+            this.$router.push({name: 'Balances'});
           },
         });
       },

@@ -7,10 +7,10 @@ import {
 
 // Handle token transfers
 export function handleTransfer(event: Transfer): void {
-  let amount = event.params.value
   let tokenAddress = event.address
   let fromAddress = event.params.from
   let toAddress = event.params.to
+  let amount = event.params.value
 
   // Don't create User entity if `from` address is token
   if(fromAddress != tokenAddress) {
