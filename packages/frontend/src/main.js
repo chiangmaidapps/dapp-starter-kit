@@ -4,6 +4,7 @@ import router from "./router";
 import store from "./store";
 
 import Buefy from "buefy";
+import { createProvider } from './vue-apollo'
 
 Vue.use(Buefy);
 
@@ -12,5 +13,6 @@ Vue.config.productionTip = false
 new Vue({
   router,
   store,
-  render: (h) => h(App),
+  apolloProvider: createProvider(),
+  render: (h) => h(App)
 }).$mount("#app");

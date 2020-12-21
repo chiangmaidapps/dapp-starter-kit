@@ -1,20 +1,20 @@
 <template>
     <article>
-        <div>
+        <div class="home">
             <div class="hero-body">
                 <div class="container has-text-centered mt-6">
                     <h1 class="title has-text-weight-bold is-size-1 mb-5">
                         Dapp Starter Kit
                     </h1>
                     <h2 class="subtitle mb-6 pt-5">
-                        Connect your web3 wallet
+                        Connect your Web3 Wallet to Get Started
                     </h2>
                     <b-button type="is-primary" size="is-large" class="mt-3" @click="connect" v-if="!account">
                         Connect
                     </b-button>
                     <div v-else>
                         <b-button type="is-primary" outlined size="is-large" class="mt-3 mx-2" @click="disconnect">
-                            Connect to another wallet
+                            Connect to Another Wallet
                         </b-button>
                     </div>
                 </div>
@@ -32,12 +32,12 @@
     methods: {
       connect() {
         if (this.account) {
-          this.$router.push({name: 'Home'});
+          this.$router.push({name: 'UserBalance'});
           return;
         }
         this.$store.dispatch("bootstrap", {
           onSuccessCallback: () => {
-            this.$router.push({name: 'Home'});
+            this.$router.push({name: 'UserBalance'});
           },
         });
       },

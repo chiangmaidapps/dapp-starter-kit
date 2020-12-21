@@ -4,7 +4,7 @@ import Onboard from "bnc-onboard";
 import {
   CHAIN_ID,
   BLOCKNATIVE_DAPP_ID,
-} from "../settings";
+} from "../../settings";
 
 export function initOnboard(subscriptions) {
   return Onboard({
