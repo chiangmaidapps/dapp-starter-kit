@@ -1,4 +1,4 @@
-query UserBalance ($address: String) {
+query UserTokenBalance ($address: String) {
   user(id: $address) {
     tokenBalance
   }

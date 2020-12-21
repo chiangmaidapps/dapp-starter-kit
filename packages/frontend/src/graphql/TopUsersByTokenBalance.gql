@@ -1,4 +1,4 @@
-query TopUsers ($numUsers: Int = 10) {
+query TopUsersByTokenBalance ($numUsers: Int = 10) {
   users(first: $numUsers, orderBy: tokenBalance, orderDirection: desc) {
     id
     tokenBalance

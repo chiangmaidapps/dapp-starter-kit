@@ -1,6 +1,6 @@
 <template>
   <article>
-    <div class="user-balance">
+    <div class="token-balances">
       <div class="hero-body">
         <div class="container has-text-centered mt-6">
           <h1 class="title has-text-weight-bold is-size-1 mb-5">
@@ -21,7 +21,7 @@
 
           <!-- Apollo watched Graphql query -->
           <ApolloQuery
-            :query="require('../graphql/UserBalance.gql')"
+            :query="require('../graphql/UserTokenBalance.gql')"
             :variables="{ address }"
           >
             <template slot-scope="{ result: { loading, error, data } }">

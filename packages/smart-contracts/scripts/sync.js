@@ -8,6 +8,7 @@ const GRAPH_DIR = "../subgraph"
 
 function syncContract(network, chainId, contractName) {
   console.log(
+    chalk.gray(network + ":"),
     "Syncing",
     chalk.cyan(contractName),
     "to",
@@ -55,6 +56,7 @@ function syncContract(network, chainId, contractName) {
     );
 
     console.log(
+      chalk.gray(network + ":"),
       "Syncing",
       chalk.cyan(contractName),
       "to",

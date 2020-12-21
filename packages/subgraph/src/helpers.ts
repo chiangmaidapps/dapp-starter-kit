@@ -1,10 +1,22 @@
 import { BigInt, BigDecimal, Address } from '@graphprotocol/graph-ts'
 import { SimpleToken } from '../generated/SimpleToken/SimpleToken'
-import { User } from '../generated/schema'
+import { User, Token } from '../generated/schema'
 
 /************************************
  ********** Helpers ***********
  ************************************/
+
+export function ZERO_BD(): BigDecimal {
+  return BigDecimal.fromString('0')
+}
+
+export function ZERO_BI(): BigInt {
+  return BigInt.fromI32(0)
+}
+
+export function ONE_BI(): BigInt {
+  return BigInt.fromI32(1)
+}
 
 export function exponentToBigDecimal(decimals: i32): BigDecimal {
   let bd = BigDecimal.fromString('1')
@@ -14,30 +26,24 @@ export function exponentToBigDecimal(decimals: i32): BigDecimal {
   return bd
 }
 
-export function bigDecimalExp18(): BigDecimal {
+export function wei(): BigDecimal {
   return BigDecimal.fromString('1000000000000000000')
 }
 
-export const ZERO_BD = BigDecimal.fromString('0')
-
-export const ZERO_BI = BigInt.fromI32(0)
-
-export const ONE_BI = BigInt.fromI32(1)
-
-export function convertEthToDecimal(eth: BigInt): BigDecimal {
-  return eth.toBigDecimal().div(exponentToBigDecimal(18))
+export function convertToWei(amount: BigInt): BigDecimal {
+  return amount.toBigDecimal().div(exponentToBigDecimal(18))
 }
 
-export function convertTokenToDecimal(tokenAmount: BigInt, exchangeDecimals: i32): BigDecimal {
-  if (exchangeDecimals == 0) {
+export function convertTokenToDecimal(tokenAmount: BigInt, tokenDecimals: i32): BigDecimal {
+  if (tokenDecimals == 0) {
     return tokenAmount.toBigDecimal()
   }
-  return tokenAmount.toBigDecimal().div(exponentToBigDecimal(exchangeDecimals))
+  return tokenAmount.toBigDecimal().div(exponentToBigDecimal(tokenDecimals))
 }
 
 export function equalToZero(value: BigDecimal): boolean {
   const formattedVal = parseFloat(value.toString())
-  const zero = parseFloat(ZERO_BD.toString())
+  const zero = parseFloat(ZERO_BD().toString())
   if (zero == formattedVal) {
     return true
   }
@@ -81,14 +87,22 @@ export function fetchTokenDecimals(tokenAddress: Address): i32 {
   return decimalValue
 }
 
-export function createUser(address: Address): void {
+export function createOrFetchUser(address: Address): User {
   let user = User.load(address.toHexString())
   if (user === null) {
     user = new User(address.toHexString())
+    user.tokenBalance = ZERO_BI()
+    user.numTransfers = ZERO_BI()
     user.save()
   }
+  return user as User
 }
 
-export function oneBigInt(): BigInt {
-  return BigInt.fromI32(1)
+export function createOrFetchToken(address: Address): Token {
+  let token = Token.load(address.toHexString())
+  if (token === null) {
+    token = new Token(address.toHexString())
+    token.save()
+  }
+  return token as Token
 }
