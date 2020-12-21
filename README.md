@@ -1,5 +1,11 @@
 
 # Dapp Starter Kit
+Everything you need to start building decentralized applications on Ethereum.  
+
+Components:
+* [Hardhat](https://hardhat.org/)
+* [The Graph](https://thegraph.com/)
+* [Vue](https://vuejs.org/)
 
 ## Recommendations
 
