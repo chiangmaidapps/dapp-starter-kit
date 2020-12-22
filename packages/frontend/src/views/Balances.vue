@@ -33,7 +33,7 @@
 
               <!-- Result -->
               <div v-else-if="data && data.user && data.user.tokenBalance" class="result apollo">
-                Balance: {{ data.user.tokenBalance }}
+                Balance: {{ formatUnits(data.user.tokenBalance) }}
               </div>
 
               <!-- No result -->
@@ -47,6 +47,7 @@
 </template>
 
 <script>
+import {ethers} from 'ethers';
 export default {
   data () {
     return {
@@ -58,9 +59,13 @@ export default {
   computed: {
     address: function() {
       return this.addressInput.toLowerCase().trim();
+    },
+  },
+  methods: {
+    formatUnits(amount) {
+      return ethers.utils.formatEther(amount)
     }
   },
-  methods: {},
 }
 </script>
 

@@ -19,7 +19,7 @@
             >
             <label for="field-amount" class="label">Amount</label>
             <input
-              v-model="transferAmount"
+              v-model="amount"
               placeholder="Type an amount of tokens to transfer"
               class="input"
               id="field-amount"
@@ -42,22 +42,26 @@
 
 <script>
 import {mapGetters} from 'vuex';
+import {ethers} from 'ethers';
 export default {
   data () {
     return {
       address: null,
-      transferAmount: null,
+      amount: null,
       transferring: false
     }
   },
   components: {},
   computed: {
-    ...mapGetters(['account'])
+    ...mapGetters(['account']),
+    transferAmount: function() {
+      return ethers.utils.parseEther(this.amount)
+    }
   },
   methods: {
       async transferTokens() {
         this.transferring = true;
-        await this.$store.dispatch('transferTokens', this.address, this.transferAmount);
+        await this.$store.dispatch('transferTokens', { 'address': this.address, 'transferAmount': this.transferAmount });
         this.transferring = false;
       }
   },
