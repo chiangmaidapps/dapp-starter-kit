@@ -11,6 +11,9 @@
                 </div>
 
                 <div class="navbar-start">
+                  <b-navbar-item tag="router-link" :to="{ name: 'Send' }" v-if="account">
+                    Send
+                  </b-navbar-item>
                   <b-navbar-item tag="router-link" :to="{ name: 'Balances' }" v-if="account">
                     Balances
                   </b-navbar-item>

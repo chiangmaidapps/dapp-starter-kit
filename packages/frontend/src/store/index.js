@@ -17,9 +17,6 @@ const onboard = initOnboard({
   },
 });
 
-// const notify = initNotify();
-
-
 export default new Vuex.Store({
   state: {
     account: null,
@@ -66,6 +63,16 @@ export default new Vuex.Store({
 
       commit('setContracts', {simpleTokenContract});
     },
+    async transferTokens({state}, address, transferAmount) {
+      if (state.contracts && state.account && address && transferAmount) {
+        if (!ethers.utils.isAddress(address)) return;
+
+        const {simpleTokenContract} = state.contracts;
+        const tx = await simpleTokenContract.transfer(address, transferAmount);
+
+        await tx.wait(1);
+      }
+    }
   },
   getters: {
     contracts: (state) => state.contracts,
