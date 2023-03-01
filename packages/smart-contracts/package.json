@@ -33,7 +33,7 @@
     "@nomiclabs/hardhat-waffle": "^2.0.0",
     "chai": "^4.2.0",
     "chalk": "^5.0.0",
-    "ethereum-waffle": "^3.0.0",
+    "ethereum-waffle": "^4.0.10",
     "ethers": "^5.0.0",
     "hardhat": "^2.0.4",
     "hardhat-abi-exporter": "^2.0.5",
